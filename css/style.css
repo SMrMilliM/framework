@@ -1,0 +1,111 @@
+        .page-container {
+            border: 2px solid #dee2e6;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .page-header {
+            background: #0d6efd;
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        .page-content {
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            min-height: 500px;
+        }
+
+        .nav-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #dee2e6;
+            cursor: pointer;
+
+        }
+
+        .sidebar-nav .nav-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+        }
+
+        .sidebar-nav .nav-item.active a {
+            color: white;
+        }
+
+        .nav-item:hover {
+            background: #e9ecef;
+        }
+
+        .nav-item.active {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .table-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+
+        .mockup-label {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #ff6b6b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .page-container {
+            position: relative;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            padding: 3px 6px;
+            border-radius: 50%;
+            background: #dc3545;
+            color: white;
+            font-size: 12px;
+        }

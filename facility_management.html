@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aged Care Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid">
+        <h1 class="text-center mb-4 mt-3">Aged Care Management System</h1>
+
+        <!-- Facility Management -->
+        <div class="page-container">
+            <div class="page-header">7. Facility Management (facilities.php)</div>
+            <div class="mockup-label">MOCKUP</div>
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-md-2 sidebar">
+                        <ul class="sidebar-nav">
+                            <li class="nav-item">
+                                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="members.html"><i class="fas fa-users"></i> Members</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="staff.html"><i class="fas fa-user-nurse"></i> Staff</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="scheduling.html"><i class="fas fa-calendar-alt"></i> Scheduling</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="facility_management.html"><i class="fas fa-building"></i> Facilities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="inventory.html"><i class="fas fa-boxes"></i> Inventory</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="medication.html"><i class="fas fa-pills"></i> Medication</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="familty.html"><i class="fas fa-users-family"></i> Family Portal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="service_management.html"><i class="fas fa-chart-bar"></i> Service
+                                    Management</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Facility Management</h3>
+
+                        <!-- Facility Overview Stats -->
+                        <div class="row mb-4">
+                            <div class="col-md-3">
+                                <div class="stats-card bg-primary">
+                                    <h3>50</h3>
+                                    <p>Total Rooms</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card bg-success">
+                                    <h3>45</h3>
+                                    <p>Occupied</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card bg-warning">
+                                    <h3>3</h3>
+                                    <p>Maintenance</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card bg-info">
+                                    <h3>2</h3>
+                                    <p>Available</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tabs for different facility sections -->
+                        <ul class="nav nav-tabs mb-3">
+                            <li class="nav-item">
+                                <a class="nav-link active">Room Management</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Maintenance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Utilities</a>
+                            </li>
+                        </ul>
+
+                        <!-- Room Management Table -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5>Room Status Overview</h5>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal"><i
+                                    class="fas fa-plus"></i> Add Room</button>
+                        </div>
+
+                        <div class="table-container">
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Room #</th>
+                                        <th>Type</th>
+                                        <th>Resident</th>
+                                        <th>Status</th>
+                                        <th>Last Cleaned</th>
+                                        <th>Maintenance</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Room 15</strong></td>
+                                        <td>Single</td>
+                                        <td>Margaret Johnson</td>
+                                        <td><span class="badge bg-success">Occupied</span></td>
+                                        <td>Today 9:00 AM</td>
+                                        <td><span class="badge bg-success">Good</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info">View</button>
+                                            <button class="btn btn-sm btn-warning">Maintain</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Room 16</strong></td>
+                                        <td>Shared</td>
+                                        <td>-</td>
+                                        <td><span class="badge bg-warning">Maintenance</span></td>
+                                        <td>Yesterday 2:00 PM</td>
+                                        <td><span class="badge bg-warning">Repair Needed</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info">View</button>
+                                            <button class="btn btn-sm btn-danger">Schedule Repair</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Room 17</strong></td>
+                                        <td>Single</td>
+                                        <td>-</td>
+                                        <td><span class="badge bg-info">Available</span></td>
+                                        <td>Today 11:00 AM</td>
+                                        <td><span class="badge bg-success">Good</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info">View</button>
+                                            <button class="btn btn-sm btn-success">Assign</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header bg-warning text-white d-flex justify-content-between align-items-center">
+                                        <h6 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Maintenance Alerts</h6>
+                                        <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#maintenanceModal">
+                                            <i class="fas fa-plus"></i> Log Issue
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Room 16 - AC repair needed</li>
+                                            <li class="list-group-item">Room 8 - Plumbing issue</li>
+                                            <li class="list-group-item">Common Area - Light replacement</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header bg-info text-white">
+                                        <h6><i class="fas fa-calendar-check"></i> Today's Cleaning Schedule</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Rooms 18-25 - Morning shift</li>
+                                            <li class="list-group-item">Common areas - Afternoon</li>
+                                            <li class="list-group-item">Kitchen deep clean - Evening</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Maintenance Request Modal -->
+                        <div class="modal fade" id="maintenanceModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Log Maintenance Request</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label class="form-label">Location</label>
+                                                <select class="form-select">
+                                                    <option value="">Select Location</option>
+                                                    <option>Room 15</option>
+                                                    <option>Room 16</option>
+                                                    <option>Common Area</option>
+                                                    <option>Kitchen</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Issue Type</label>
+                                                <select class="form-select">
+                                                    <option>Plumbing</option>
+                                                    <option>Electrical</option>
+                                                    <option>Furniture</option>
+                                                    <option>Appliance</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Priority</label>
+                                                <select class="form-select">
+                                                    <option>Low</option>
+                                                    <option>Medium</option>
+                                                    <option>High</option>
+                                                    <option>Urgent</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Description</label>
+                                                <textarea class="form-control" rows="3"></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Reported By</label>
+                                                <input type="text" class="form-control" readonly value="Current Staff Name">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary">Submit Request</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Room Modal -->
+                        <div class="modal fade" id="addRoomModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Add New Room</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label class="form-label">Room Number</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Room Type</label>
+                                                <select class="form-select">
+                                                    <option>Single</option>
+                                                    <option>Shared</option>
+                                                    <option>Special Care</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Floor</label>
+                                                <input type="number" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Facilities</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="ensuite">
+                                                    <label class="form-check-label" for="ensuite">Ensuite Bathroom</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="accessibility">
+                                                    <label class="form-check-label" for="accessibility">Accessibility Features</label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary">Add Room</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

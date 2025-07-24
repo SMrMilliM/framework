@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aged Care Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid">
+        <h1 class="text-center mb-4 mt-3">Aged Care Management System</h1>
+
+        <!-- 11. Inventory Management -->
+        <div class="page-container">
+            <div class="page-header">11. Inventory Management (inventory.php)</div>
+            <div class="mockup-label">MOCKUP</div>
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-md-2 sidebar">
+                        <ul class="sidebar-nav">
+                            <li class="nav-item">
+                                <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="members.html"><i class="fas fa-users"></i> Members</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="staff.html"><i class="fas fa-user-nurse"></i> Staff</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="scheduling.html"><i class="fas fa-calendar-alt"></i> Scheduling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="facility_management.html"><i class="fas fa-building"></i> Facilities</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="inventory.html"><i class="fas fa-boxes"></i> Inventory</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="medication.html"><i class="fas fa-pills"></i> Medication</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="familty.html"><i class="fas fa-users-family"></i> Family Portal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="service_management.html"><i class="fas fa-chart-bar"></i> Service
+                                    Management</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Inventory Management</h3>
+                        <!-- Inventory Overview Stats -->
+                        <div class="row mb-4">
+                            <div class="col-md-3">
+                                <div class="stats-card bg-danger">
+                                    <h3>12</h3>
+                                    <p>Low Stock Items</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card bg-warning">
+                                    <h3>8</h3>
+                                    <p>Expiring Soon</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card bg-info">
+                                    <h3>156</h3>
+                                    <p>Total Items</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card bg-success">
+                                    <h3>$2,450</h3>
+                                    <p>Monthly Budget</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category Tabs -->
+                        <ul class="nav nav-tabs mb-3">
+                            <li class="nav-item">
+                                <a class="nav-link active">All Items</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Medications</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Food & Kitchen</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Personal Care</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Medical Supplies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Daily Necessities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Resident-Specific Items</a>
+                            </li>
+                        </ul>
+
+                        <!-- Search and Add -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="search" class="form-control" placeholder="Search inventory items...">
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option>All Categories</option>
+                                    <option>Low Stock</option>
+                                    <option>Expiring Soon</option>
+                                    <option>Out of Stock</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary w-100"><i class="fas fa-plus"></i> Add Item</button>
+                            </div>
+                        </div>
+
+                        <!-- Inventory Table -->
+                        <div class="table-container">
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Item Code</th>
+                                        <th>Item Name</th>
+                                        <th>Category</th>
+                                        <th>Resident</th>
+                                        <th>Current Stock</th>
+                                        <th>Minimum Level</th>
+                                        <th>Expiry Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CARE009</td>
+                                        <td>Wheelchair</td>
+                                        <td><span class="badge bg-primary">Daily Necessity</span></td>
+                                        <td>Margaret Johnson</td>
+                                        <td><strong>1</strong></td>
+                                        <td>1</td>
+                                        <td>N/A</td>
+                                        <td><span class="badge bg-success">Allocated</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-secondary">View</button>
+                                            <button class="btn btn-sm btn-info">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>MED001</td>
+                                        <td>Blood Pressure Medication</td>
+                                        <td><span class="badge bg-info">Medication</span></td>
+                                        <td>-</td>
+                                        <td><strong>5</strong></td>
+                                        <td>20</td>
+                                        <td>2025-09-15</td>
+                                        <td><span class="badge bg-danger">Low Stock</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning">Reorder</button>
+                                            <button class="btn btn-sm btn-info">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FOOD012</td>
+                                        <td>Breakfast Cereal</td>
+                                        <td><span class="badge bg-success">Food</span></td>
+                                        <td>-</td>
+                                        <td><strong>25</strong></td>
+                                        <td>10</td>
+                                        <td>2025-08-30</td>
+                                        <td><span class="badge bg-warning">Expiring Soon</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success">Use First</button>
+                                            <button class="btn btn-sm btn-info">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>CARE008</td>
+                                        <td>Adult Diapers (Large)</td>
+                                        <td><span class="badge bg-primary">Personal Care</span></td>
+                                        <td>-</td>
+                                        <td><strong>45</strong></td>
+                                        <td>30</td>
+                                        <td>N/A</td>
+                                        <td><span class="badge bg-success">In Stock</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-secondary">View</button>
+                                            <button class="btn btn-sm btn-info">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>MED015</td>
+                                        <td>Thermometers</td>
+                                        <td><span class="badge bg-warning">Medical Supply</span></td>
+                                        <td>-</td>
+                                        <td><strong>0</strong></td>
+                                        <td>5</td>
+                                        <td>N/A</td>
+                                        <td><span class="badge bg-danger">Out of Stock</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-danger">Urgent Order</button>
+                                            <button class="btn btn-sm btn-info">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Quick Actions and Alerts -->
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header bg-danger text-white">
+                                        <h6><i class="fas fa-exclamation-circle"></i> Critical Low Stock</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Blood Pressure Meds
+                                                <span class="badge bg-danger">5 left</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Insulin
+                                                <span class="badge bg-danger">3 left</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Thermometers
+                                                <span class="badge bg-danger">0 left</span>
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-danger btn-sm mt-2 w-100">Generate Order List</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6><i class="fas fa-clock"></i> Expiring This Week</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Breakfast Cereal
+                                                <span class="badge bg-warning">Aug 30</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Milk (Dairy)
+                                                <span class="badge bg-warning">Aug 28</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Pain Relief Gel
+                                                <span class="badge bg-warning">Aug 29</span>
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-warning btn-sm mt-2 w-100">Prioritize Usage</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header bg-success text-white">
+                                        <h6><i class="fas fa-chart-line"></i> Recent Orders</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Medical Supplies
+                                                <span class="badge bg-success">Delivered</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Kitchen Supplies
+                                                <span class="badge bg-info">In Transit</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                Medications
+                                                <span class="badge bg-secondary">Ordered</span>
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-success btn-sm mt-2 w-100">View All Orders</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
